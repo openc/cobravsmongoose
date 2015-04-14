@@ -93,7 +93,7 @@ class CobraVsMongoose
         when :element
           key, value = child.expanded_name, xml_node_to_hash(child, namespaces)
         when :text
-          key, value = '$', unescape(child.to_s).strip
+          key, value = '$', child.to_s.strip
           next if value.empty?
         end
         current = this_node[key]
