@@ -2,8 +2,8 @@ require 'rubygems'
 require 'rake/gempackagetask'
 require 'zlib'
 
-PACKAGE_VERSION = File.open('CHANGES'){ |io| 
-  io.read[/\b\d+\.\d+\.\d+\b/] 
+PACKAGE_VERSION = File.open('CHANGES'){ |io|
+  io.read[/\b\d+\.\d+\.\d+\b/]
 }
 
 spec = Gem::Specification.new do |s|
@@ -16,8 +16,6 @@ spec = Gem::Specification.new do |s|
   s.files = Dir['{lib,test}/**/*.rb']
   s.require_path = "lib"
   s.test_file = 'test/all.rb'
-  s.has_rdoc = true
-  s.extra_rdoc_files = %w[README CHANGES COPYING]
 end
 
 Rake::GemPackageTask.new(spec) do |pkg|
